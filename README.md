@@ -37,7 +37,7 @@ Follow the on-screen prompts to:
 ## File Structure
 
 - `main.py` - Main application entry point
-- `book.py` - Book class definition
-- `finder.py` - BookFinder class for API integration
-- `favorites.py` - FavoritesManager class for managing saved books
+- `app/book.py` - Book class definition
+- `app/finder.py` - BookFinder class for API integration
+- `app/favorites.py` - FavoritesManager class for managing saved books
 - `requirements.txt` - Project dependencies 
