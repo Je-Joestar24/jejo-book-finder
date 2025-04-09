@@ -1,9 +1,9 @@
 import json
 import os
-from book import Book
+from app.book import Book
 
 class FavoritesManager:
-    def __init__(self, filename='favorites.json'):
+    def __init__(self, filename='favorites/favorites.json'):
         self.filename = filename
         self.favorites = self.load_favorites()
 

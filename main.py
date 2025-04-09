@@ -1,5 +1,5 @@
-from finder import BookFinder
-from favorites import FavoritesManager
+from app.finder import BookFinder
+from app.favorites import FavoritesManager
 
 def display_menu():
     print("\n📚 Jejo Book Finder")

@@ -1,6 +1,6 @@
 import requests
 import logging
-from book import Book
+from app.book import Book
 
 class BookFinder:
     def __init__(self):
