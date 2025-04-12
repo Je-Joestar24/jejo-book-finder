@@ -17,9 +17,19 @@ class BookFinder:
             ]
         )
 
-    def search_books(self, query):
+    def search_books(self, query, title=None, author=None, lang=None):
         try:
-            params = {'q': query}
+            search_query = []
+            if query:
+                search_query.append(query)
+            if title:
+                search_query.append(f"intitle:{title}")
+            if author:
+                search_query.append(f"inauthor:{author}")
+            if lang:
+                search_query.append(f"lang:{lang}")
+
+            params = {'q': '+'.join(search_query)}
             response = requests.get(self.api_url, params=params)
             response.raise_for_status()
             return self.handle_response(response.json())
