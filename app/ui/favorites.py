@@ -1,4 +1,16 @@
-from app.ui.utils import console, Prompt, Table
+from app.ui.utils import console, Prompt, Table, Panel
+
+
+def display_favorite_book(book):
+    console.print(Panel.fit(
+        f"[bold blue]📘 {book.title}[/bold blue]\n"
+        f"[yellow]Author(s):[/yellow] {', '.join(book.authors) if book.authors else 'Unknown'}\n"
+        f"[yellow]Published:[/yellow] {book.published_date or 'Unknown'}\n"
+        f"[yellow]Summary:[/yellow] {book.description or 'No description available'}\n"
+        f"[yellow]More Info:[/yellow] {book.info_link}\n"
+        f"[yellow]Note:[/yellow] {book.note or 'No note'}",
+        title="Favorite Book Details"
+    ))
 
 
 def view_favorites(favorites_manager, author=None, title=None):
@@ -25,17 +37,22 @@ def view_favorites(favorites_manager, author=None, title=None):
     
     while True:
         console.print("\nOptions:")
+        console.print("[yellow]v[/yellow] - View book details")
         console.print("[yellow]r[/yellow] - Remove a book from favorites")
         console.print("[yellow]s[/yellow] - Search/filter favorites")
         console.print("[yellow]q[/yellow] - Quit to main menu")
         
         action = Prompt.ask(
             "Choose action",
-            choices=["r", "s", "q"],
+            choices=["v", "r", "s", "q"],
             default="q"
         )
         
-        if action == "r":
+        if action == "v":
+            selection = Prompt.ask("Enter book number to view", choices=[str(i) for i in range(1, len(favorites) + 1)])
+            book = favorites[int(selection) - 1]
+            display_favorite_book(book)
+        elif action == "r":
             selection = Prompt.ask("Enter book number to remove", choices=[str(i) for i in range(1, len(favorites) + 1)])
             book = favorites[int(selection) - 1]
             favorites_manager.remove_favorite(book.title)
