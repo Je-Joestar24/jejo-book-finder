@@ -45,6 +45,7 @@ A powerful terminal-based application for searching and managing books using the
 ### Interactive Mode
 Run the application:
 ```bash
+source venv/bin/activate.ps1  # On Windows: venv\Scripts\activate.ps1
 python main.py
 ```
 
