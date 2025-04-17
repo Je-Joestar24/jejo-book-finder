@@ -1,7 +1,8 @@
 import argparse
 from app.finder import BookFinder
 from app.favorites import FavoritesManager
-from app.ui.books import search_books, console
+from app.ui.utils import console
+from app.ui.books import search_books
 from app.ui.favorites import view_favorites, export_favorites
 from app.ui.menu import display_menu
 
