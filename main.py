@@ -1,7 +1,9 @@
 import argparse
 from app.finder import BookFinder
 from app.favorites import FavoritesManager
-from app.controls import view_favorites, export_favorites, search_books, display_menu, view_recent, console
+from app.ui.books import search_books, console
+from app.ui.favorites import view_favorites, export_favorites
+from app.ui.menu import display_menu
 
 def main():
     parser = argparse.ArgumentParser(description="Jejo Book Finder")
