@@ -9,6 +9,7 @@ A powerful terminal-based application for searching and managing books using the
   - Filter results by language
   - Command-line search options
   - Rich display of book details
+  - Mock data support for testing
 
 - 📚 **Book Navigation**
   - View books one at a time with detailed information
@@ -71,6 +72,11 @@ Export favorites:
 python main.py --export csv --filename my_books.csv
 ```
 
+Use mock data for testing:
+```bash
+python main.py --mock
+```
+
 ### Book Navigation Options
 When viewing a book, you can use these options:
 - `y` - Add to favorites (with optional note)
@@ -88,10 +94,18 @@ When viewing favorites:
 ## 📁 File Structure
 
 - `main.py` - Main application entry point
-- `app/book.py` - Book class definition
-- `app/finder.py` - BookFinder class for API integration
-- `app/favorites.py` - FavoritesManager class for managing saved books
-- `app/ui` - Controls for interactive user interface
+- `app/`
+  - `functional/`
+    - `book.py` - Book class definition
+    - `book_finder_base.py` - Abstract base class for book finders
+    - `favorites.py` - FavoritesManager class for managing saved books
+  - `google_books_finder.py` - Google Books API implementation
+  - `mock_books_finder.py` - Mock data implementation for testing
+  - `ui/` - Controls for interactive user interface
+    - `books.py` - Book search and display functionality
+    - `favorites.py` - Favorites management UI
+    - `menu.py` - Main menu interface
+    - `utils.py` - Common UI utilities
 - `favorites/` - Directory containing saved favorites and recent books
 - `exports/` - Directory containing exported favorites (CSV/JSON/Markdown)
 - `requirements.txt` - Project dependencies
@@ -110,4 +124,12 @@ When viewing favorites:
 - Interactive panels for book details
 - Clickable links (in supporting terminals)
 - Progress indicators
-- Clear error messages 
+- Clear error messages
+
+## 🧪 Testing
+
+The application includes a mock implementation for testing purposes:
+- Use `--mock` flag to run with mock data
+- Mock implementation provides consistent test data
+- Useful for development and testing without API calls
+- Demonstrates polymorphism and inheritance in the codebase 
