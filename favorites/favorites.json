@@ -8,5 +8,15 @@
     "published_date": "2012-06-28",
     "info_link": "http://books.google.com.ph/books?id=pEvGyeU-l9gC&dq=Harry+potter&hl=&source=gbs_api",
     "note": "I like this one again"
+  },
+  {
+    "title": "The Test Book",
+    "authors": [
+      "Test Author"
+    ],
+    "description": "A test book description",
+    "published_date": "2023-01-01",
+    "info_link": "http://example.com/test-book",
+    "note": "l"
   }
 ]

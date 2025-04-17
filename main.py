@@ -1,10 +1,24 @@
 import argparse
-from app.finder import BookFinder
+from app.google_books_finder import GoogleBooksFinder
+from app.mock_books_finder import MockBooksFinder
 from app.favorites import FavoritesManager
 from app.ui.utils import console
 from app.ui.books import search_books
 from app.ui.favorites import view_favorites, export_favorites
 from app.ui.menu import display_menu
+
+def get_book_finder(use_mock=False):
+    """Factory function to create the appropriate book finder.
+    
+    Args:
+        use_mock (bool): Whether to use the mock finder instead of Google Books
+        
+    Returns:
+        BookFinderBase: An instance of a book finder
+    """
+    if use_mock:
+        return MockBooksFinder()
+    return GoogleBooksFinder()
 
 def main():
     parser = argparse.ArgumentParser(description="Jejo Book Finder")
@@ -14,9 +28,10 @@ def main():
     parser.add_argument("--favorites", action="store_true", help="View favorites")
     parser.add_argument("--export", help="Export favorites (format: csv/json/md)")
     parser.add_argument("--filename", help="Export filename")
+    parser.add_argument("--mock", action="store_true", help="Use mock book finder for testing")
     args = parser.parse_args()
 
-    book_finder = BookFinder()
+    book_finder = get_book_finder(args.mock)
     favorites_manager = FavoritesManager()
 
     if args.favorites:

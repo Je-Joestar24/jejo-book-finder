@@ -1,5 +1,26 @@
 [
   {
+    "title": "Naruto Forever",
+    "authors": [
+      "Kazuhisa Fujie",
+      "Ivan Rorick"
+    ],
+    "description": "In this must-have for anime fans of \"Naruto,\" otaku researchers have dug deep to find the answers to a plethora of questions that this complex and endlessly fascinating story has raised, as well as uncovering the many secrets surrounding Naruto on his quest to become the number-one ninja.",
+    "published_date": "2008-03",
+    "info_link": "https://play.google.com/store/books/details?id=3bdbiVvMph4C&source=gbs_api",
+    "note": null
+  },
+  {
+    "title": "The Test Book",
+    "authors": [
+      "Test Author"
+    ],
+    "description": "A test book description",
+    "published_date": "2023-01-01",
+    "info_link": "http://example.com/test-book",
+    "note": null
+  },
+  {
     "title": "The Player of Games",
     "authors": [
       "Iain M. Banks"
@@ -79,26 +100,6 @@
     "description": "The Eighth Story. Nineteen Years Later. Based on an original new story by J.K. Rowling, Jack Thorne and John Tiffany, a new play by Jack Thorne, \"Harry Potter and the Cursed Child\" is the eighth story in the Harry Potter series and the first official Harry Potter story to be presented on stage. The play will receive its world premiere in London s West End on July 30, 2016. It was always difficult being Harry Potter and it isn t much easier now that he is an overworked employee of the Ministry of Magic, a husband and father of three school-age children. While Harry grapples with a past that refuses to stay where it belongs, his youngest son Albus must struggle with the weight of a family legacy he never wanted. As past and present fuse ominously, both father and son learn the uncomfortable truth: sometimes, darkness comes from unexpected places. \"",
     "published_date": "2016-08-22",
     "info_link": "http://books.google.com.ph/books?id=6JbljwEACAAJ&dq=Harry+Potter&hl=&source=gbs_api",
-    "note": null
-  },
-  {
-    "title": "The Promises We Made",
-    "authors": [
-      "Rohan Jain"
-    ],
-    "description": "Raj can\u2019t believe his luck when he gets selected for a summer internship in Switzerland. He had always dreamed of travelling, and this was his chance to explore the world. During this internship, he crosses paths with Sofia, a German student studying in Switzerland. Little did he know that this chance encounter will alter the course of his life forever. Raj finds himself falling in love with Sofia. But as their time together in Switzerland nears an end, Raj finds himself torn between the desire to confess his feelings to Sofia and the fear of losing her. Will Raj be able to tell Sofia how he feels? Will they be able to sustain a love spanning across cultural and geographical boundaries? The Promises We Made recounts the journey of two people falling in love in the most unexpected of circumstances. But destiny had something else in store \u2013 a dark twist of events that leaves the reader lamenting the vagaries of fate.",
-    "published_date": "2020-12-08",
-    "info_link": "https://play.google.com/store/books/details?id=nSwKEAAAQBAJ&source=gbs_api",
-    "note": null
-  },
-  {
-    "title": "Harry Potter",
-    "authors": [
-      "S. Gunelius"
-    ],
-    "description": "The Harry Potter books are the bestselling books of all time. In this fascinating study, Susan Gunelius analyzes every aspect of the brand phenomenon that is Harry Potter. Delving into price wars, box office revenue, and brand values, amongst other things, this is the story of the most incredible brand success there has ever been.",
-    "published_date": "2008-06-03",
-    "info_link": "https://play.google.com/store/books/details?id=abYKXvCwEToC&source=gbs_api",
     "note": null
   }
 ]
