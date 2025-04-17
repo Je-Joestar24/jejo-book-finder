@@ -1,8 +1,6 @@
 import argparse
-from rich import print as rprint
 from app.finder import BookFinder
 from app.favorites import FavoritesManager
-from app.book import Book
 from app.controls import view_favorites, export_favorites, search_books, display_menu, view_recent, console
 
 def main():

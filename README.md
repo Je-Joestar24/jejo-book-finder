@@ -90,6 +90,7 @@ When viewing favorites:
 - `app/book.py` - Book class definition
 - `app/finder.py` - BookFinder class for API integration
 - `app/favorites.py` - FavoritesManager class for managing saved books
+- `app/controls.py` - Controls for interactive user interface
 - `favorites/` - Directory containing saved favorites and recent books
 - `exports/` - Directory containing exported favorites (CSV/JSON/Markdown)
 - `requirements.txt` - Project dependencies
