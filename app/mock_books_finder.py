@@ -1,5 +1,5 @@
-from app.book_finder_base import BookFinderBase
-from app.book import Book
+from app.functional.book_finder_base import BookFinderBase
+from app.functional.book import Book
 
 class MockBooksFinder(BookFinderBase):
     def __init__(self):

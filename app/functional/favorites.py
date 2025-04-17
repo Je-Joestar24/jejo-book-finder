@@ -2,7 +2,7 @@ import json
 import os
 import csv
 from datetime import datetime
-from app.book import Book
+from app.functional.book import Book
 
 class FavoritesManager:
     def __init__(self, filename='favorites/favorites.json', recent_filename='favorites/recent.json'):

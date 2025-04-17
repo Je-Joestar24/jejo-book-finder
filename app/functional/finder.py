@@ -1,9 +1,10 @@
-from abc import ABC, abstractmethod
+import requests
 import logging
-from app.book import Book
+from app.functional.book import Book
 
-class BookFinderBase(ABC):
+class BookFinder:
     def __init__(self):
+        self.api_url = "https://www.googleapis.com/books/v1/volumes"
         self.setup_logging()
 
     def setup_logging(self):
@@ -16,30 +17,27 @@ class BookFinderBase(ABC):
             ]
         )
 
-    @abstractmethod
     def search_books(self, query, title=None, author=None, lang=None):
-        """Search for books using the implemented finder.
-        
-        Args:
-            query (str): General search query
-            title (str, optional): Title to search for
-            author (str, optional): Author to search for
-            lang (str, optional): Language to filter by
-            
-        Returns:
-            list[Book]: List of found books
-        """
-        pass
+        try:
+            search_query = []
+            if query:
+                search_query.append(query)
+            if title:
+                search_query.append(f"intitle:{title}")
+            if author:
+                search_query.append(f"inauthor:{author}")
+            if lang:
+                search_query.append(f"lang:{lang}")
+
+            params = {'q': '+'.join(search_query)}
+            response = requests.get(self.api_url, params=params)
+            response.raise_for_status()
+            return self.handle_response(response.json())
+        except requests.exceptions.RequestException as e:
+            logging.error(f"API request failed: {str(e)}")
+            return []
 
     def handle_response(self, response):
-        """Handle the API response and convert it to Book objects.
-        
-        Args:
-            response (dict): API response data
-            
-        Returns:
-            list[Book]: List of processed Book objects
-        """
         books = []
         try:
             items = response.get('items', [])

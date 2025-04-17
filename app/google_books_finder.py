@@ -1,5 +1,5 @@
 import requests
-from app.book_finder_base import BookFinderBase
+from app.functional.book_finder_base import BookFinderBase
 
 class GoogleBooksFinder(BookFinderBase):
     def __init__(self):

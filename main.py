@@ -1,7 +1,7 @@
 import argparse
 from app.google_books_finder import GoogleBooksFinder
 from app.mock_books_finder import MockBooksFinder
-from app.favorites import FavoritesManager
+from app.functional.favorites import FavoritesManager
 from app.ui.utils import console
 from app.ui.books import search_books
 from app.ui.favorites import view_favorites, export_favorites
