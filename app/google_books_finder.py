@@ -5,6 +5,7 @@ This module implements the BookFinderBase interface to search for books using
 the Google Books API, providing real book data from Google's extensive database.
 """
 
+import logging
 import requests
 from app.functional.book_finder_base import BookFinderBase
 

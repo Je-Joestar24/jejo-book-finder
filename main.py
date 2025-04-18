@@ -13,6 +13,7 @@ from app.ui.utils import console
 from app.ui.books import search_books
 from app.ui.favorites import view_favorites, export_favorites
 from app.ui.menu import display_menu
+from app.ui.recents import view_recent
 
 def get_book_finder(use_mock=False):
     """Factory function to create the appropriate book finder.
