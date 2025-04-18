@@ -1,6 +1,20 @@
+"""
+Books UI handler module for managing book search and display functionality.
+
+This module provides the user interface for searching and displaying books,
+including interactive navigation through search results and adding books to favorites.
+"""
+
 from app.ui.utils import console, Panel, Prompt, Table
 
 def display_book(book, current_index, total_books):
+    """Display a book's details in a formatted panel.
+    
+    Args:
+        book (Book): The book object to display
+        current_index (int): Current book's position in the search results
+        total_books (int): Total number of books in the search results
+    """
     console.print(Panel.fit(
         f"[bold blue]📘 {book.title}[/bold blue]\n"
         f"[yellow]Author(s):[/yellow] {', '.join(book.authors) if book.authors else 'Unknown'}\n"
@@ -11,6 +25,20 @@ def display_book(book, current_index, total_books):
     ))
 
 def search_books(book_finder, favorites_manager, query=None, title=None, author=None, lang=None):
+    """Search for books and provide interactive navigation through results.
+    
+    This function handles the book search process, displaying results and allowing
+    users to navigate through them, add books to favorites, and view a list of all
+    search results.
+    
+    Args:
+        book_finder (BookFinderBase): The book finder implementation to use
+        favorites_manager (FavoritesManager): Manager for handling favorites
+        query (str, optional): General search query
+        title (str, optional): Title to search for
+        author (str, optional): Author to search for
+        lang (str, optional): Language to filter by
+    """
     if not any([query, title, author]):
         query = Prompt.ask("🔍 Enter a book title, author, or keyword")
     

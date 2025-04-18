@@ -1,3 +1,10 @@
+"""
+Main application module for the Jejo Book Finder.
+
+This module serves as the entry point for the application, handling command-line
+arguments, initializing components, and managing the main application flow.
+"""
+
 import argparse
 from app.google_books_finder import GoogleBooksFinder
 from app.mock_books_finder import MockBooksFinder
@@ -10,6 +17,9 @@ from app.ui.menu import display_menu
 def get_book_finder(use_mock=False):
     """Factory function to create the appropriate book finder.
     
+    This function creates and returns either a real Google Books finder or
+    a mock finder based on the provided parameter.
+    
     Args:
         use_mock (bool): Whether to use the mock finder instead of Google Books
         
@@ -21,6 +31,15 @@ def get_book_finder(use_mock=False):
     return GoogleBooksFinder()
 
 def main():
+    """Main application entry point.
+    
+    This function sets up the application, parses command-line arguments,
+    and manages the main application flow including:
+    - Command-line argument handling
+    - Component initialization
+    - Main menu navigation
+    - Direct command execution
+    """
     parser = argparse.ArgumentParser(description="Jejo Book Finder")
     parser.add_argument("--title", help="Search by title")
     parser.add_argument("--author", help="Search by author")

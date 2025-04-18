@@ -1,8 +1,22 @@
+"""
+Mock book finder module for testing and development purposes.
+
+This module implements the BookFinderBase interface with mock data, providing
+a consistent interface for testing the application without making actual API calls.
+"""
+
 from app.functional.book_finder_base import BookFinderBase
 from app.functional.book import Book
 
 class MockBooksFinder(BookFinderBase):
+    """Implementation of BookFinderBase using mock data.
+    
+    This class provides a testing implementation of the book finder interface,
+    using predefined mock data instead of making actual API calls.
+    """
+    
     def __init__(self):
+        """Initialize the mock book finder with sample data."""
         super().__init__()
         self.mock_books = [
             Book(
@@ -24,6 +38,9 @@ class MockBooksFinder(BookFinderBase):
     def search_books(self, query, title=None, author=None, lang=None):
         """Search for books using mock data.
         
+        This method filters the mock book data based on the provided search criteria,
+        simulating a real book search without making API calls.
+        
         Args:
             query (str): General search query
             title (str, optional): Title to search for
@@ -31,7 +48,7 @@ class MockBooksFinder(BookFinderBase):
             lang (str, optional): Language to filter by
             
         Returns:
-            list[Book]: List of found books
+            list[Book]: List of mock books matching the search criteria
         """
         filtered_books = self.mock_books.copy()
         
