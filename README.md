@@ -87,6 +87,7 @@ When viewing a book, you can use these options:
 
 ### Favorites Management Options
 When viewing favorites:
+- `v` - View a book
 - `r` - Remove a book
 - `s` - Search/filter favorites
 - `q` - Quit to main menu
@@ -103,6 +104,7 @@ When viewing favorites:
   - `mock_books_finder.py` - Mock data implementation for testing
   - `ui/` - Controls for interactive user interface
     - `books.py` - Book search and display functionality
+    - `favorites.py` - Favorites management UI
     - `favorites.py` - Favorites management UI
     - `menu.py` - Main menu interface
     - `utils.py` - Common UI utilities
