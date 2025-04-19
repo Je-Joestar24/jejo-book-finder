@@ -92,6 +92,9 @@ When viewing favorites:
 - `s` - Search/filter favorites
 - `q` - Quit to main menu
 
+### DEMO
+- link(Video): https://screenrec.com/share/uEwbV29RQD
+
 ## 📁 File Structure
 
 - `main.py` - Main application entry point
